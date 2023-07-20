@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react';
-import {StyleSheet} from 'react-native';
-import {Text, View} from 'native-base';
-import {BarCodeScanner} from 'expo-barcode-scanner';
-import {useNavigation, useIsFocused} from '@react-navigation/native';
-import {StackNavigationProp} from "@react-navigation/stack";
-import {StackParamList} from "../types/router.type";
+import React, { useState, useEffect } from 'react';
+import { StyleSheet } from 'react-native';
+import { Text, View } from 'native-base';
+import { BarCodeScanner } from 'expo-barcode-scanner';
+import { useNavigation, useIsFocused } from '@react-navigation/native';
+import { StackNavigationProp } from "@react-navigation/stack";
+import { StackParamList } from "../types/router.type";
 
 export default function Scanner() {
   const [hasPermission, setHasPermission] = useState<boolean | null>(null);
@@ -14,14 +14,14 @@ export default function Scanner() {
 
   useEffect(() => {
     const getBarCodeScannerPermissions = async () => {
-      const {status} = await BarCodeScanner.requestPermissionsAsync();
+      const { status } = await BarCodeScanner.requestPermissionsAsync();
       setHasPermission(status === 'granted');
     };
 
     getBarCodeScannerPermissions();
   }, []);
 
-  const handleBarCodeScanned = ({data}: { data: string }) => {
+  const handleBarCodeScanned = ({ data }: { data: string }) => {
     let barcode = data;
     if (barcode.length != 8) {
       barcode = barcode.replace(/^0+/, '');
@@ -30,7 +30,7 @@ export default function Scanner() {
         return
       }
     }
-    navigation.navigate('Wagon', {WagonNumber: barcode});
+    navigation.navigate('Wagon', { WagonNumber: barcode });
     if (hasPermission === null) {
       return
     }

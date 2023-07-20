@@ -6,10 +6,10 @@ export const SettingService = {
     try {
       const serverUrl = await AsyncStorage.getItem('serverUrl');
       const apiKey = await AsyncStorage.getItem('apiKey');
-      return {serverUrl, apiKey};
+      return { serverUrl, apiKey };
     } catch (error) {
       console.error("Error fetching data:", error);
-      return {serverUrl: '', apiKey: ''};
+      return { serverUrl: '', apiKey: '' };
     }
   },
 };

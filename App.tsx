@@ -1,6 +1,6 @@
 import React from "react";
-import {NativeBaseProvider} from "native-base";
-import {QueryClient, QueryClientProvider} from 'react-query';
+import { NativeBaseProvider } from "native-base";
+import { QueryClient, QueryClientProvider } from 'react-query';
 import Navigator from "./src/components/Navigator";
 import SettingsProvider from "./src/providers/settings.provider";
 
@@ -12,7 +12,7 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <NativeBaseProvider>
         <SettingsProvider>
-          <Navigator/>
+          <Navigator />
         </SettingsProvider>
       </NativeBaseProvider>
     </QueryClientProvider>

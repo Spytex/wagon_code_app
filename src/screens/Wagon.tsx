@@ -1,12 +1,12 @@
 import React from 'react';
-import {Box, Text, View} from 'native-base';
-import {useQuery} from 'react-query';
-import {WagonService} from "../service/wagon.service";
+import { Box, Text, View } from 'native-base';
+import { useQuery } from 'react-query';
+import { WagonService } from "../service/wagon.service";
 
 
-export default function Wagon({route}: any) {
-  const {WagonNumber} = route.params;
-  const {isLoading, isError, data: wagonData} = useQuery(
+export default function Wagon({ route }: any) {
+  const { WagonNumber } = route.params;
+  const { isLoading, isError, data: wagonData } = useQuery(
     'wagonData',
     async () => {
       return await WagonService.getOne(WagonNumber);

@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, Button, VStack} from 'native-base';
-import {useNavigation} from "@react-navigation/native";
-import {StackNavigationProp} from "@react-navigation/stack";
-import {StackParamList} from "../types/router.type";
+import { View, Button, VStack } from 'native-base';
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { StackParamList } from "../types/router.type";
 
 export default function Home() {
   const navigation = useNavigation<StackNavigationProp<StackParamList>>();
